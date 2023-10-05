@@ -1541,39 +1541,6 @@
             "rid": "win"
           }
         }
-      },
-      "Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.AspNetCore.Identity": "2.1.39",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.11",
-          "Microsoft.EntityFrameworkCore": "7.0.11",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11"
-        },
-        "compile": {
-          "bin/placeholder/Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Models.dll": {}
-        }
-      },
-      "Services/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.AspNetCore.Identity": "2.1.39",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.11",
-          "Microsoft.EntityFrameworkCore": "7.0.11",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11",
-          "Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Services.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Services.dll": {}
-        }
       }
     }
   },
@@ -3857,16 +3824,6 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "Models/1.0.0": {
-      "type": "project",
-      "path": "../Models/Models.csproj",
-      "msbuildProject": "../Models/Models.csproj"
-    },
-    "Services/1.0.0": {
-      "type": "project",
-      "path": "../Services/Services.csproj",
-      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3875,9 +3832,7 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.11",
       "Microsoft.EntityFrameworkCore >= 7.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11",
-      "Microsoft.EntityFrameworkCore.Tools >= 7.0.11",
-      "Models >= 1.0.0",
-      "Services >= 1.0.0"
+      "Microsoft.EntityFrameworkCore.Tools >= 7.0.11"
     ]
   },
   "packageFolders": {
@@ -3887,11 +3842,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GymApp\\API\\API\\API.csproj",
-      "projectName": "API",
-      "projectPath": "D:\\GymApp\\API\\API\\API.csproj",
+      "projectUniqueName": "D:\\GymApp\\API\\Models\\Models.csproj",
+      "projectName": "Models",
+      "projectPath": "D:\\GymApp\\API\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\aatma\\.nuget\\packages\\",
-      "outputPath": "D:\\GymApp\\API\\API\\obj\\",
+      "outputPath": "D:\\GymApp\\API\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3906,20 +3861,12 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {
-            "D:\\GymApp\\API\\Models\\Models.csproj": {
-              "projectPath": "D:\\GymApp\\API\\Models\\Models.csproj"
-            },
-            "D:\\GymApp\\API\\Services\\Services.csproj": {
-              "projectPath": "D:\\GymApp\\API\\Services\\Services.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -3967,9 +3914,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

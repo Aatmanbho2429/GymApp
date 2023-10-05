@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qJo/JYs6Rkjz3sLfZbqFyPZ88VkLh5ZctQfRMHto0XEuGbhzP/AJVXCP/DE2f+Y5+bPlmOfmC43+sySHvlceEg==",
+  "dgSpecHash": "HtsNmB3SUk0WlXEC833scCAu2a4RUEysHplyVLNzyMPseMFMp2yUz/mEw8xum31Dtcj91V34RtfapViFhzFaRg==",
   "success": true,
-  "projectFilePath": "D:\\GymApp\\API\\API\\API.csproj",
+  "projectFilePath": "D:\\GymApp\\API\\Services\\Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aatma\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\aatma\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
