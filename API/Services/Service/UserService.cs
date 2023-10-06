@@ -9,10 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Services.IService;
 
 namespace Services.Service
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
@@ -93,38 +94,13 @@ namespace Services.Service
             IdentityResult result = await _userManager.CreateAsync(applicationUser, entity.Password);
             if (result.Succeeded)
             {
-                //Member
-                if (entity.Role == "Member")
-                {
-                    if (await _roleManager.FindByNameAsync("Member") == null)
-                    {
-                        ApplicationRole role = new ApplicationRole() { Name = "Member" };
-                        await _roleManager.CreateAsync(role);
-                    }
-                    await _userManager.AddToRoleAsync(applicationUser, "Member");
-                    applicationUser.Role = "Member";
-                    await _db.SaveChangesAsync();
+                applicationUser.Role = entity.Role;
+                applicationUser.Email = entity.Email;
+                await _db.SaveChangesAsync();
 
-                    userResponse.Email = applicationUser.Email;
-                    userResponse.Name = applicationUser.Name;
-                    userResponse.Id = applicationUser.Id;
-                }
-                //Trainer
-                if (entity.Role == "Trainer")
-                {
-                    if (await _roleManager.FindByNameAsync("Trainer") == null)
-                    {
-                        ApplicationRole role = new ApplicationRole() { Name = "Trainer" };
-                        await _roleManager.CreateAsync(role);
-                    }
-                    await _userManager.AddToRoleAsync(applicationUser, "Trainer");
-                    applicationUser.Role = "Trainer";
-                    await _db.SaveChangesAsync();
-                    userResponse.Email = applicationUser.Email;
-                    userResponse.Name = applicationUser.Name;
-                    userResponse.Id = applicationUser.Id;
-
-                }
+                userResponse.Email = applicationUser.Email;
+                userResponse.Name = applicationUser.Name;
+                userResponse.Id = applicationUser.Id;
             }
             return userResponse;
         }

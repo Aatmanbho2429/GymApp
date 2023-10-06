@@ -15,9 +15,12 @@
                 <li class="list-group-item">Duration</li>
             </ul>
             <ng-template pTemplate="footer">
-                <p-button label="Edit" icon="pi pi-check" styleClass="p-button-secondary" (click)="toEditPackage()"></p-button>
+                <p-button label="Edit" icon="pi pi-check" styleClass="p-button-secondary"
+                    (click)="toEditPackage()"></p-button>
+                <p-toast></p-toast>
+                <p-confirmPopup></p-confirmPopup>
                 <p-button label="Delete" icon="pi pi-times" styleClass="p-button-danger"
-                    [style]="{ 'margin-left': '.5em' }"></p-button>
+                    [style]="{ 'margin-left': '.5em' }" (click)="confirmDelete($event)"></p-button>
             </ng-template>
         </p-card>
     </div>

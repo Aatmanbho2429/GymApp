@@ -9,19 +9,19 @@
         <p-button label="Package" (click)="toPackageDashboard()"></p-button>
     </div>
 
-    <div class="container-fluid row mt-3">
-        <p-card header="Member Name" subheader="Role" [style]="{ width: '390px' }">
+    <div class="container-fluid row mt-3" >
+        <p-card header="{{user.name}}" subheader="{{user.role}}" [style]="{ width: '390px',margin:'10px'}" *ngFor="let user of users">
             <div class="row">
                 <div class="col-6">
                     <ul class="list-group">
-                        <li class="list-group-item">Number</li>
-                        <li class="list-group-item">Current Package</li>
-                        <li class="list-group-item">PT Name</li>
+                        <li class="list-group-item">{{user.phoneNumber}}</li>
+                        <li class="list-group-item">{{user.packageName}}</li>
+                        <li class="list-group-item">{{user.pt}}</li>
                     </ul>
                 </div>
                 <div class="col-6">
                     <ul class="list-group">
-                        <li class="list-group-item"> Start Date</li>
+                        <li class="list-group-item">{{user.startDate}}</li>
                         <li class="list-group-item"><i class="pi pi-eye"></i> Workout</li>
                         <li class="list-group-item"><i class="pi pi-eye"></i> Measurment</li>
                     </ul>
@@ -29,10 +29,14 @@
             </div>
 
             <ng-template pTemplate="footer">
-                <p-button label="Edit" icon="pi pi-check" styleClass="p-button-secondary" (click)="toEditUser()"></p-button>
-                <p-button label="Delete" icon="pi pi-times" styleClass="p-button-danger"
-                    [style]="{ 'margin-left': '.5em' }"></p-button>
+                <p-button label="Edit" icon="pi pi-check" styleClass="p-button-secondary"
+                    (click)="toEditUser()"></p-button>
+                <p-toast></p-toast>
+                <p-confirmPopup></p-confirmPopup>
+                <button pButton  icon="pi pi-times" class="p-button-danger"
+                [style]="{ 'margin-left': '.5em' }" value="{{user.id}}"  (click)="confirmDelete($event)">Delete</button>
             </ng-template>
         </p-card>
     </div>
+
 </div>

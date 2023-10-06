@@ -23,17 +23,17 @@
             <input type="text" pInputText placeholder="Password" />
         </div>
         <div class="p-inputgroup p-2">
-            <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
-            <input type="text" pInputText placeholder="Confirm Password" />
-        </div>
-
-        <div class="p-inputgroup p-3 row">
-            <div class="p-inputgroup p-2 col-6">
-                <span class="p-inputgroup-addon"><i class="pi pi-clock"></i></span>
+            <span class="p-inputgroup-addon"><i class="pi pi-clock"></i></span>
                 <input type="number" pInputText placeholder="Number" />
+        </div>
+        <div class="row p-2">
+            <div class="col-6">
+                <label for="">Select Package</label>
+                <p-dropdown [options]="packages" [(ngModel)]="package" optionLabel="name" [style]="{'width':'100%'}"></p-dropdown>
             </div>
-            <div class="p-inputgroup p-2 col-6">
-                <p-dropdown [options]="packages" [(ngModel)]="packages" optionLabel="name"></p-dropdown>
+            <div class="col-6">
+                <label for="">Select Pt</label>
+                <p-dropdown [options]="Pts" [(ngModel)]="Pt" optionLabel="name" [style]="{'width':'100%'}"></p-dropdown>
             </div>
         </div>
         <div class="p-inputgroup p-2">
