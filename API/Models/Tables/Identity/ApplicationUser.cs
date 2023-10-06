@@ -10,12 +10,15 @@ namespace Models.Tables.Identity
         public string? Role { get; set; }
         public string? WorkoutCard { get; set; }
         public string? MeasurementCard { get; set; }
+        public string? PackageName { get; set; }
 
         public int? PackageId { get; set; }
         [ForeignKey("PackageId")]
         public Package? Package { get; set; }
 
         public decimal? AmountPaid { get; set; }
+        public Guid? Pt { get; set; }
+
         public bool? IsPt { get; set; }
         public decimal? Duration { get; set; }
         public string? Clients { get; set; }

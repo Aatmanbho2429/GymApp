@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,13 @@ namespace Models.DTO.Request
         [Required]
         public string Password { get; set; }
 
+        public string? Role { get; set; } = "Member";
+
         [Required]
-        public string Role { get; set; }
+        public decimal PhoneNumber { get; set; }
+
+        public string? PtId { get; set; }
+        public string? PackageId { get; set; }
+
     }
 }
